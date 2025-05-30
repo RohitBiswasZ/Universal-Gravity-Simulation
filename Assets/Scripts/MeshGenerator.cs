@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class MeshGenerator : MonoBehaviour
 {
-    public PlanetMeshData TopFace(int resolution, int radius, Vector3 offset)
+    public CelestialBodyMeshData TopFace(int resolution, int radius, Vector3 offset)
     {
-        PlanetMeshData meshData = new PlanetMeshData(Allocator.Temp);
+        CelestialBodyMeshData meshData = new CelestialBodyMeshData(Allocator.Temp);
         float stepPos = (float)radius / resolution;
         
         for (int z = 0; z <= resolution; z++)
@@ -33,9 +33,9 @@ public class MeshGenerator : MonoBehaviour
         return meshData;
     }
     
-    public PlanetMeshData DownFace(int resolution, int radius, Vector3 offset)
+    public CelestialBodyMeshData DownFace(int resolution, int radius, Vector3 offset)
     {
-        PlanetMeshData meshData = new PlanetMeshData(Allocator.Temp);
+        CelestialBodyMeshData meshData = new CelestialBodyMeshData(Allocator.Temp);
         float stepPos = (float)radius / resolution;
         
         for (int z = 0; z <= resolution; z++)
@@ -63,9 +63,9 @@ public class MeshGenerator : MonoBehaviour
         return meshData;
     }
 
-    public PlanetMeshData FrontFace(int resolution, int radius, Vector3 offset)
+    public CelestialBodyMeshData FrontFace(int resolution, int radius, Vector3 offset)
     {
-        PlanetMeshData meshData = new PlanetMeshData(Allocator.Temp);
+        CelestialBodyMeshData meshData = new CelestialBodyMeshData(Allocator.Temp);
         float stepPos = (float)radius / resolution;
         
         for (int y = 0; y <= resolution; y++)
@@ -93,9 +93,9 @@ public class MeshGenerator : MonoBehaviour
         return meshData;
     }
     
-    public PlanetMeshData BackFace(int resolution, int radius, Vector3 offset)
+    public CelestialBodyMeshData BackFace(int resolution, int radius, Vector3 offset)
     {
-        PlanetMeshData meshData = new PlanetMeshData(Allocator.Temp);
+        CelestialBodyMeshData meshData = new CelestialBodyMeshData(Allocator.Temp);
         float stepPos = (float)radius / resolution;
         
         for (int y = 0; y <= resolution; y++)
@@ -123,9 +123,9 @@ public class MeshGenerator : MonoBehaviour
         return meshData;
     }
     
-    public PlanetMeshData RightFace(int resolution, int radius, Vector3 offset)
+    public CelestialBodyMeshData RightFace(int resolution, int radius, Vector3 offset)
     {
-        PlanetMeshData meshData = new PlanetMeshData(Allocator.Temp);
+        CelestialBodyMeshData meshData = new CelestialBodyMeshData(Allocator.Temp);
         float stepPos = (float)radius / resolution;
         
         for (int y = 0; y <= resolution; y++)
@@ -153,9 +153,9 @@ public class MeshGenerator : MonoBehaviour
         return meshData;
     }
     
-    public PlanetMeshData LeftFace(int resolution, int radius, Vector3 offset)
+    public CelestialBodyMeshData LeftFace(int resolution, int radius, Vector3 offset)
     {
-        PlanetMeshData meshData = new PlanetMeshData(Allocator.Temp);
+        CelestialBodyMeshData meshData = new CelestialBodyMeshData(Allocator.Temp);
         float stepPos = (float)radius / resolution;
         
         for (int y = 0; y <= resolution; y++)
@@ -183,16 +183,16 @@ public class MeshGenerator : MonoBehaviour
         return meshData;
     }
 
-    public PlanetMeshData CubicFace(int resulation, int radius, Vector3 offset)
+    public CelestialBodyMeshData CubicFace(int resulation, int radius, Vector3 offset)
     {
-        PlanetMeshData topMeshData = TopFace(resulation, radius, offset);
-        PlanetMeshData downMeshData = DownFace(resulation, radius, offset);
-        PlanetMeshData frontMeshData = FrontFace(resulation, radius, offset);
-        PlanetMeshData backMeshData = BackFace(resulation, radius, offset);
-        PlanetMeshData rightMeshData = RightFace(resulation, radius, offset);
-        PlanetMeshData leftMeshData = LeftFace(resulation, radius, offset);
+        CelestialBodyMeshData topMeshData = TopFace(resulation, radius, offset);
+        CelestialBodyMeshData downMeshData = DownFace(resulation, radius, offset);
+        CelestialBodyMeshData frontMeshData = FrontFace(resulation, radius, offset);
+        CelestialBodyMeshData backMeshData = BackFace(resulation, radius, offset);
+        CelestialBodyMeshData rightMeshData = RightFace(resulation, radius, offset);
+        CelestialBodyMeshData leftMeshData = LeftFace(resulation, radius, offset);
 
-        PlanetMeshData meshData = new PlanetMeshData(Allocator.Temp);
+        CelestialBodyMeshData meshData = new CelestialBodyMeshData(Allocator.Temp);
         
         meshData.AddPlanetMeshData(topMeshData);
         meshData.AddPlanetMeshData(downMeshData);
